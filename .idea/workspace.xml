@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88f826e2-8f43-4f20-a114-23c855434d37" name="Default" comment="" />
+    <list default="true" id="88f826e2-8f43-4f20-a114-23c855434d37" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/environments/dev/roles/java_configuration" beforeDir="false" afterPath="$PROJECT_DIR$/environments/dev/roles/java_configuration" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/stage/roles/java_configuration" beforeDir="false" afterPath="$PROJECT_DIR$/environments/stage/roles/java_configuration" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,15 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hosts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/inventarios/hosts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="datahub_config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/datahub_config.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,7 +33,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hybris_configuration.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hybris_configuration.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/hybris_configuration.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -73,6 +68,15 @@
       <file leaf-file-name="systemd-hybris.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/systemd-hybris.yml">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="williamyeh.oracle-java.yml" pinned="false" current-in-tab="false">
@@ -118,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/group_vars/all/mysql.yml" />
         <option value="$PROJECT_DIR$/roles/jeffhung.mysql/tasks/main.yml" />
         <option value="$PROJECT_DIR$/roles/hybris_centos/tasks/main.yml" />
         <option value="$PROJECT_DIR$/roles/hybris_setup/tasks/main.yml" />
@@ -169,6 +172,7 @@
         <option value="$PROJECT_DIR$/environments/qa/roles/solr_configuration/templates/script_solr.j2" />
         <option value="$PROJECT_DIR$/environments/stage/inventarios/hosts" />
         <option value="$PROJECT_DIR$/environments/stage/group_vars/all/hybris_configuration.yml" />
+        <option value="$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml" />
       </list>
     </option>
   </component>
@@ -201,6 +205,45 @@
               <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
               <item name="environments" type="462c0819:PsiDirectoryNode" />
               <item name="stage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="stage" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="stage" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="stage" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="stage" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="hybris_deploy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
+              <item name="stage" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="hybris_deploy" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,6 +335,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-255" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -576,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/inventarios/hosts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -590,27 +627,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/java_configuration.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/jeffhung_mysql.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/mysql_connection.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/solr_configuration.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -634,10 +654,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/jeffhung_mysql.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/hybris_configuration.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/java_configuration.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/solr_configuration.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
         </state>
       </provider>
     </entry>
