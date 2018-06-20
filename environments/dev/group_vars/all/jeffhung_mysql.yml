@@ -1,0 +1,11 @@
+---
+db_name: hybrisgcc
+
+mysql_databases:
+  - name: "{{ db_name }}"
+
+mysql_users:
+  - name: hybrisgcc
+    pass: Grupocorporacioncontrol123
+    priv: "{{ db_name }}.*:ALL,GRANT"
+    host: "%"

@@ -1,0 +1,161 @@
+---
+
+- name: change_permissions_start
+  become: true
+  file:
+    path: "{{ solr_dir }}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+
+- name: Install wget
+  yum:
+    name: wget
+    state: present
+
+- name: install_unzip
+  yum:
+    name: unzip
+    state: present
+
+- name: unzip_files
+  become: true
+  unarchive:
+    src: "{{ solr_files }}"
+    dest: "{{ solr_dir }}/"
+    remote_src: yes
+
+- name: change_permissions
+  become: true
+  file:
+    path: "{{ solr_dir }}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+
+- name: copy_script
+  become: yes
+  template:
+    src: "script_solr.j2"
+    dest: "{{ solr_dir }}/solrmaster/bin/init.d/solr.sh"
+    owner: hybris
+    group: hybris
+    mode: 0775
+
+- name: change_permissions_solr_master
+  become: true
+  file:
+    path: "{{ solr_dir }}/solrmaster/"
+    owner: hybris
+    group: hybris
+    mode: 0775
+    recurse: yes
+
+- name: change_permissions_solr_slave
+  become: true
+  file:
+    path: "{{ solr_dir }}/solrslave/"
+    owner: hybris
+    group: hybris
+    mode: 0775
+    recurse: yes
+
+- name: execute_master_slave
+  command: /bin/sh {{ solr_dir }}/solrmaster/bin/init.d/solr.sh
+  register: exec
+
+- name: debug
+  debug:
+    var: exec
+
+
+#- name: solr_permissions
+#  become: true
+#  file:
+#    path: "{{ solr_dir }}"
+#    owner: hybris
+#    group: hybris
+#    recurse: yes
+#
+#- name: change_solr_script
+#  become_user: hybris
+#  lineinfile:
+#    path: "{{ solr_dir }}/solrmaster/bin/init.d/solr"
+#    regexp: "^SOLR_INSTALL_DIR*"
+#    line: "SOLR_INSTALL_DIR=\"{{ solr_dir }}/solrmaster\""
+#
+#- name: change_solr_script
+#  become_user: hybris
+#  lineinfile:
+#    path: "{{ solr_dir }}/solrslave/bin/init.d/solr"
+#    regexp: "^SOLR_INSTALL_DIR*"
+#    line: "SOLR_INSTALL_DIR=\"{{ solr_dir }}/solrslave\""
+#
+#- name: change_solr_env
+#  become_user: hybris
+#  lineinfile:
+#    path: "{{ solr_dir }}/solrmaster/bin/init.d/solr"
+#    regexp: "^SOLR_ENV*"
+#    line: "SOLR_ENV=\"{{ solr_dir }}/solrmaster/bin/solr.in.sh\""
+#
+#- name: change_solr_env
+#  become_user: hybris
+#  lineinfile:
+#    path: "{{ solr_dir }}/solrslave/bin/init.d/solr"
+#    regexp: "^SOLR_ENV*"
+#    line: "SOLR_ENV=\"{{ solr_dir }}/solrslave/bin/solr.in.sh\""
+#
+#- name: change_script_user
+#  become_user: hybris
+#  lineinfile:
+#    path: "{{ solr_dir }}/solrmaster/bin/init.d/solr"
+#    regexp: "^RUNAS*"
+#    line: "RUNAS=\"hybris\""
+#
+#- name: change_script_user
+#  become_user: hybris
+#  lineinfile:
+#    path: "{{ solr_dir }}/solrslave/bin/init.d/solr"
+#    regexp: "^RUNAS*"
+#    line: "RUNAS=\"hybris\""
+#
+#- name: solrmaster_config
+#  become_user: hybris
+#  blockinfile:
+#    path: "{{ solr_dir }}/solrmaster/bin/solr.in.sh"
+#    insertafter: "^#SOLR_SSL_WANT_CLIENT_AUTH=false"
+#    block: |
+#      #Hybris Master config
+#      SOLR_OPTS="\$SOLR_OPTS -Denable.master=true"
+#
+#- name: solrslave_config
+#  become_user: hybris
+#  blockinfile:
+#    path: "{{ solr_dir }}/solrslave/bin/solr.in.sh"
+#    insertafter: "^#SOLR_SSL_WANT_CLIENT_AUTH=false"
+#    block: |
+#      #Hybris Slave Config
+#      SOLR_PORT=8984
+#      SOLR_OPTS="\$SOLR_OPTS -Denable.slave=true -Dmaster.address=127.0.0.1"
+#      SOLR_AUTH_TYPE=basic
+#      SOLR_AUTHENTICATION_OPTS="-Dbasicauth=solrserver:server123"
+#
+#- name: solrmaster_start
+#  become: true
+#  command: /bin/sh {{ solr_dir }}/solrmaster/bin/init.d/solr start
+#  register: solrmaster
+#
+#- name: debug_solr
+#  debug:
+#    var: solrmaster
+#
+#- name: solrslave_start
+#  become: true
+#  command: /bin/sh {{ solr_dir }}/solrslave/bin/init.d/solr start
+#
+#  register: solrslave
+#
+#- name: debug_solr
+#  debug:
+#    var: solrslave
+#

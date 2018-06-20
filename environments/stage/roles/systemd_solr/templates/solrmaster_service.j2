@@ -1,0 +1,15 @@
+[Unit]
+Description=Start/Stop solr
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart={{ solr_dir }}/solrmaster/bin/init.d/solr start
+RemainAfterExit=true
+ExecStop={{ solr_dir }}/solrmaster/bin/init.d/solr stop
+TimeoutStopSec=180
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

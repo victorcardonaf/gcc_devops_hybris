@@ -1,0 +1,10 @@
+---
+# defaults file for hybris_setup
+hybris_cis_service_stop: False
+hybris_initd_service: "true"
+hybris_service_stop: False
+daemon: "/mnt/hybris/bin/platform/hybrisserver.sh"
+daemon_opts: "start"
+pidfile: "/mnt/hybris/data/hybristomcat.java.pid"
+service_name: hybris
+hybris_runit_dir: "/etc/service/hybris"

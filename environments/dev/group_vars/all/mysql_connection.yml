@@ -1,0 +1,12 @@
+---
+mysql_root_password: mysqlrootpass
+
+mysql_host: hybris-gcc.cp92va9dfro9.us-east-1.rds.amazonaws.com
+mysql_user: hybris
+mysql_pass: hybris2018
+mysql_port: 3306
+
+#mysql_host: localhost
+#mysql_user: root
+#mysql_pass: mysqlrootpass
+#mysql_port: 3306

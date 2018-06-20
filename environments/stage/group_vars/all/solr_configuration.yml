@@ -1,0 +1,4 @@
+
+solr_dir: "/opt"
+solr_files: "https://s3.amazonaws.com/hybris-bucket-gcc/solr_files.zip"
+

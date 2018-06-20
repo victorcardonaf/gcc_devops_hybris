@@ -1,0 +1,8 @@
+#[dev]
+#172.31.40.225 ansible_user=proveedor become=true ansible_ssh_private_key_file=/etc/ansible/Proveedor_DSW.pem
+#[docker]
+#172.17.0.3 ansible_connection=ssh ansible_user=root ansible_ssh_pass=viticor
+#[centos]
+#10.0.2.69 ansible_connection=ssh ansible_user=root ansible_ssh_pass=viticor
+[ec2]
+ec2-34-228-75-104.compute-1.amazonaws.com ansible_connection=ssh ansible_user=ec2-user become=true ansible_ssh_private_key_file=//etc/ansible/Hybris_GCC.pem

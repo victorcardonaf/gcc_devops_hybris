@@ -1,0 +1,11 @@
+---
+db_datahub: datahub
+
+mysql_db_datahub:
+  - name: "{{ db_datahub }}"
+
+mysql_users_datahub:
+  - name: datahub
+    pass: Datahub123
+    priv: "{{ db_datahub }}.*:ALL,GRANT"
+    host: "%"

@@ -1,0 +1,5 @@
+---
+ant_home: hybris/bin/platform/apache-ant-1.9.1
+ant_opts: "-Xmx200m -XX:MaxPermSize=128M"
+ant_bin: hybris/bin/platform/apache-ant-1.9.1/bin
+

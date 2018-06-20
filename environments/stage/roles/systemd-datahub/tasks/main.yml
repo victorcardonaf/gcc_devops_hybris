@@ -1,0 +1,48 @@
+---
+# tasks file for systemd-datahub
+- name: update_java_version
+  become: yes
+  shell: echo 1 | /sbin/update-alternatives --config java
+
+- name: java_version
+  shell: /bin/readlink -e $(which java) | awk -F'/' '{print "/"$2"/"$3"/"$4"/"$5}'
+  register: java_version
+
+- name: debug
+  debug: var=java_version
+
+- name: set variable
+  set_fact: java_version={{ java_version.stdout }}
+
+- name: copy_datahub
+  become: yes
+  template:
+    src: "datahub_service.j2"
+    dest: "/etc/systemd/system/datahub.service"
+    owner: hybris
+    group: root
+    mode: 0775
+
+# tasks file for systemd-datahub
+- name: script_datahub
+  become: yes
+  template:
+    src: "start_datahub.j2"
+    dest: "{{ datahub_dir }}/apache-tomcat/bin/start_datahub.sh"
+    owner: hybris
+    group: hybris
+    mode: 0775
+
+- name: reload_service
+  become: yes
+  shell: systemctl daemon-reload
+
+- name: enable_service
+  become: yes
+  service:
+    name: datahub
+    enabled: yes
+
+- name: initialize_datahub
+  become: yes
+  shell: systemctl start datahub

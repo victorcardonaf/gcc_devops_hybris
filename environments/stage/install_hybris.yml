@@ -1,0 +1,13 @@
+---
+- name: Install hybris
+  become: true
+  hosts: storefront,backoffice
+  
+  roles:
+
+   - hybris_configuration
+   - williamyeh.oracle-java
+   - java_configuration   
+   - jeffhung.mysql
+   - hybris_deploy
+   - systemd-hybris

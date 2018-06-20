@@ -1,0 +1,36 @@
+---
+# tasks file for systemd-datahub
+
+- name: copy_service
+  become: yes
+  template:
+    src: "solrmaster_service.j2"
+    dest: "/etc/systemd/system/solrmaster.service"
+    owner: root
+    group: root
+    mode: 0775
+
+- name: copy_service
+  become: yes
+  template:
+    src: "solrslave_service.j2"
+    dest: "/etc/systemd/system/solrslave.service"
+    owner: root
+    group: root
+    mode: 0775
+
+- name: reload_service
+  become: yes
+  shell: systemctl daemon-reload
+
+- name: enable_service
+  become: yes
+  service:
+    name: solrslave
+    enabled: yes
+
+- name: enable_service
+  become: yes
+  service:
+    name: solrmaster
+    enabled: yes

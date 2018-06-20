@@ -1,0 +1,8 @@
+---
+datahub_dir: "/opt/datahub"
+jar1: "product-canonical-6.7.0.0-RC3.jar"
+jar2: "sapcoreconfiguration-6.7.0.0-RC3.jar"
+jar3: "saperpproduct-canonical-6.7.0.0-RC3.jar"
+jar4: "saperpproduct-raw-6.7.0.0-RC3.jar"
+jar5: "saperpproduct-target-6.7.0.0-RC3.jar"
+jar6: "sapidocintegration-6.7.0.0-RC3.jar"

@@ -1,0 +1,10 @@
+---
+- name: Install_solr
+  become: true
+  hosts: solr
+  
+  roles:
+
+ #  - williamyeh.oracle-java
+ #  - solr_configuration 
+   - systemd_solr

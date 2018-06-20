@@ -1,0 +1,10 @@
+---
+db_name: datahub
+
+mysql_db_datahub:
+  - name: "{{ db_name }}"
+
+mysql_users_datahub:
+  - name: datahub
+    pass: Datahub123
+    priv: "{{ db_name }}.*:ALL,GRANT"

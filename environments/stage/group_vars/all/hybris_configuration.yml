@@ -1,0 +1,4 @@
+---
+location_keyfile: "/media/gcc_devops_hybris/environments/stage/files/test.pem"
+installation_folder: "/opt/hybris"
+

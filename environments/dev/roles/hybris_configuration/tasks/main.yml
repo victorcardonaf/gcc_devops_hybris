@@ -1,0 +1,78 @@
+---
+- name: Create group
+  become: true
+  group:
+    name: hybris
+    state: present
+
+- name: Create user
+  become: true
+  user:
+    name: hybris
+    shell: /bin/bash
+    groups: hybris
+    append: yes
+    create_home: yes
+
+- name: Install git
+  become: true
+
+  yum: name=git
+
+- name: Create directory
+  become_user: hybris
+  file: path=/home/hybris/.ssh state=directory
+
+- name: Create the Github SSH private key file
+  copy: src="{{ location_keyfile }}"
+        dest="/home/hybris/.ssh/test.pem"
+        mode=0400
+        owner=hybris
+        group=hybris
+
+- name: Use ssh-agent
+  shell: |
+     echo "ssh-agent = $(ssh-agent)"
+     eval $(ssh-agent)
+     ssh-add /home/hybris/.ssh/test.pem
+
+- name: change permissions
+  become: true
+  file:
+    path: "{{ installation_folder }}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+    mode: 0774
+
+- name: git_file
+  become_user: hybris
+  git: 
+    repo: 'git@bitbucket.org:PyxisPortal/gcc.git'
+    dest: "{{ installation_folder }}"
+    accept_hostkey: yes
+    force: yes
+    key_file: "/home/hybris/.ssh/test.pem"
+
+- name: change permissions
+  become: true  
+  file:
+    path: "{{ installation_folder }}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+    mode: 0774
+
+#- name: copy installation files
+#  copy:
+#    src: "{{ hybris_zip }}"
+#    dest: "{{installation_folder}}/temp/"
+#    owner: hybris
+#    group: hybris
+#    mode: 0774
+#
+#- name: Install unzip
+#  yum: name=unzip
+#  state: present
+
+

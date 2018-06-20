@@ -1,0 +1,10 @@
+---
+- name: Install_datahub
+  become: true
+  hosts: backoffice
+  
+  roles:
+
+   - datahub.mysql 
+   - datahub_config
+   - systemd-datahub 

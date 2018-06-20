@@ -1,0 +1,7 @@
+---
+location_keyfile: "/media/gcc_devops_hybris/environments/dev/files/test.pem"
+initialize: false
+installation_folder: "/mnt"
+
+
+

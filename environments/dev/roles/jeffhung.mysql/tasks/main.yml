@@ -1,0 +1,114 @@
+---
+# tasks file for jeffhung.mysql
+
+# ----------------------------------------------------------------------------
+
+- block:
+
+  - name: Install mysql packages (yum)
+    yum: name="http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm" state=present 
+
+  - name: Install_package
+    yum: name={{ item }}
+    with_items:
+      - wget
+      - gcc
+      - python
+      - python-setuptools
+      - mysql-server
+
+  - name: Install_pip
+    yum: name=python-pip
+    ignore_errors: yes
+
+  - name: get pip
+    get_url:
+      url: https://bootstrap.pypa.io/get-pip.py
+      dest: /home/hybris/
+
+  - name: install_pip
+    command: |
+      cd /home/hybris
+      python get-pip.py
+
+  - name: Install mysql dependencies
+    yum: name={{ item  }}
+    with_items:
+      - python-devel
+      - mysql-devel
+      - MySQL-python
+    ignore_errors: yes
+
+  - name: Install mysql packages (apt)
+    apt: state=present name={{ item }}
+    with_items:
+      - mysql-common
+      - mysql-server
+      # below are required for Ansible to work
+      - python-mysqldb
+      - python-selinux
+    when: ansible_pkg_mgr == 'apt'
+
+  become: yes
+
+# ----------------------------------------------------------------------------
+
+- name: Start the mysql services and enable on boot
+  service: state=started enabled=yes name={{ mysql_service_name[ansible_os_family] }}
+  become: yes
+
+# ----------------------------------------------------------------------------
+
+- name: Try login mysql as root with default empty password
+  mysql_variables: login_user=root login_password='' variable=version
+  register: mysql_version
+  ignore_errors: yes
+
+- name: Determine if mysql need securing or not
+  set_fact: mysql_need_securing={{ mysql_version.failed is not defined }}
+
+- debug: var=mysql_need_securing
+
+- name: Initiate mysql securing process
+  include: securing.yml
+  when: mysql_need_securing
+
+# ----------------------------------------------------------------------------
+
+# Note: On debian the mysql user debian-sys-maint must exist!!
+#       This user together with the credentials in /etc/mysql/debian.cnf are
+#       used by the init scripts to stop the server as they would require
+#       knowledge of the mysql root users password else.
+#       (See: http://serverfault.com/a/9952)
+- name: Ensure login mysql as debian-sys-maint would success
+  mysql_variables: config_file=/etc/mysql/debian.cnf variable=version_comment
+  register: mysql_version_comment
+  when: ansible_os_family == 'Debian'
+  # File /etc/mysql/debian.cnf is owned by root
+  become: yes
+
+# ----------------------------------------------------------------------------
+
+- name: Create_the_databases
+  mysql_db:
+    name="{{ item.name }}"
+    state=present
+    login_host="{{ mysql_host }}"
+    login_user="{{ mysql_user }}"
+    login_password="{{ mysql_pass }}"
+    login_port="{{ mysql_port }}"
+  with_items: "{{ mysql_databases }}"
+
+- name: Create the database users
+  mysql_user:
+    state=present
+    login_host="{{ mysql_host }}"
+    login_user="{{ mysql_user }}"
+    login_password="{{ mysql_pass }}"
+    login_port="{{ mysql_port }}"
+    name="{{ item.name }}"
+    password="{{ item.pass }}"
+    priv="{{ item.priv }}"
+    host="{{ item.host }}"
+  with_items: "{{ mysql_users }}"
+ 

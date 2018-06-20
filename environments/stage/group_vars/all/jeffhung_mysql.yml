@@ -1,0 +1,11 @@
+---
+db_gcc: gcc
+
+mysql_databases:
+  - name: "{{ db_gcc }}"
+
+mysql_users:
+  - name: gcc
+    pass: Grupocorporacioncontrol123
+    priv: "{{ db_gcc }}.*:ALL,GRANT"
+    host: "%"

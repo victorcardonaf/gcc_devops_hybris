@@ -1,0 +1,10 @@
+---
+- name: Install hybris
+  become: true
+  hosts: all
+  
+  roles:
+
+   - datahub.mysql 
+   - datahub_config
+   - systemd-datahub 

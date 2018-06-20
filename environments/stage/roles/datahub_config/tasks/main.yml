@@ -1,0 +1,114 @@
+---
+- name: Create_directory
+  become_user: hybris
+  file: path=/home/hybris/.ssh state=directory
+
+- name: Create the Github SSH private key file
+  copy: src="{{ location_keyfile }}"
+        dest="/home/hybris/.ssh/test.pem"
+        mode=0400
+        owner=hybris
+        group=hybris
+
+- name: change_permissions
+  become: true
+  file:
+    path: "{{ datahub_dir}}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+    mode: 0774
+
+- name: Use ssh-agent
+  shell: |
+     echo "ssh-agent = $(ssh-agent)"
+     eval $(ssh-agent)
+     ssh-add /home/hybris/.ssh/test.pem
+
+- name: Install git
+  become: true
+  yum: name=git
+
+- name: git_file
+  become_user: hybris
+  git:
+    repo: 'git@bitbucket.org:PyxisPortal/gcc-hybris-datahub.git'
+    dest: "{{ datahub_dir }}"
+    accept_hostkey: yes
+    force: yes
+    key_file: "/home/hybris/.ssh/test.pem"
+    version:  develop
+
+- name: change permissions
+  become: true
+  file:
+    path: "{{ datahub_dir }}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+    mode: 0774
+
+- name: Download maven
+  become: yes
+  get_url:
+    url: http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo
+    dest: /etc/yum.repos.d/epel-apache-maven.repo
+    mode: 0644
+
+- name: sed command
+  become: yes
+  shell: sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+
+- name: install_maven
+  yum:
+    name: maven
+    state: present
+
+- name: execute_gradle
+  become_user: hybris
+  shell: |
+    cd {{ datahub_dir }}
+    ./gradlew setup
+
+- name: change_permissions
+  become_user: root
+  file:
+    path: "{{ datahub_dir }}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+    mode: 0774
+
+- name: install_unzip
+  yum:
+   name: unzip
+   state: present
+
+- name: unzip_files
+  become_user: hybris
+  command: /usr/bin/unzip -o {{ datahub_dir }}/temp/hybris-datahub-6.7.0.1-RC1.zip -d {{ datahub_dir }}/temp/
+
+- name: copy_extensions
+  become_user: hybris
+  shell: |
+    cd {{ datahub_dir }}/temp/hybris/bin/ext-integration/datahub/extensions/sap/
+    cp {'{{ jar1 }}','{{ jar2 }}','{{ jar3 }}','{{ jar4 }}','{{ jar5 }}','{{ jar6}}'} {{ datahub_dir }}/extensions/
+
+- name: execute_datahub
+  become_user: hybris
+  remote_src: yes
+  shell: |
+    cd {{ datahub_dir }}
+    ./gradlew -Penvironment=dev
+
+- name: change_permissions
+  become_user: root
+  file:
+    path: "{{ datahub_dir }}"
+    owner: hybris
+    group: hybris
+    recurse: yes
+    mode: 0774
+
+
+

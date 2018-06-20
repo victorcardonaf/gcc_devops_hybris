@@ -1,0 +1,15 @@
+[Unit]
+Description=Start datahub
+
+[Service]
+Type=simple
+User=hybris
+Group=root
+ExecStart={{ datahub_dir }}/apache-tomcat/bin/start_datahub.sh
+RemainAfterExit=true
+ExecStop={{ datahub_dir }}/apache-tomcat/bin/shutdown.sh
+TimeoutStopSec=180
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
