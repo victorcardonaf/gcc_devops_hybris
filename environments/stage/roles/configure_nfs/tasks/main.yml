@@ -1,0 +1,48 @@
+---
+- name: install nfs
+  yum:
+    name: nfs-utils
+
+- name: Create_folder
+  become: true
+  file:
+    path: "{{ media_dir }}"
+    owner: hybris
+    group: hybris
+    mode: 0755
+    state: directory
+
+- name: mount_aws_nfs
+  become: true
+  shell: /bin/mount -t nfs4 {{ nfs_ip }}:/ {{ media_dir }}
+  register: mount
+
+- name: debug
+  debug: var=mount
+
+- name: mount_fstab
+  become: true
+  lineinfile:
+    path: "/etc/fstab"
+    insertafter: "^UUID*"
+    line: "{{ nfs_ip }}:/ {{ media_dir}} nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,_netdev,noresvport 0 0"
+    state: present
+
+- name: Ansible check file exists example
+  stat:
+    path: "{{ installation_folder }}/hybris/config/local.properties"
+  register: file_details
+
+- debug:
+    msg: "The file or directory exists"
+  when: file_details.stat.exists
+
+- name: local.properties
+  become: true
+  blockinfile:
+    path: "{{ installation_folder }}/hybris/config/local.properties"
+    block: |
+      media.replication.dirs={{ media_dir }}
+      media.read.dir={{ media_dir }}
+
+# tasks file for configure_nfs

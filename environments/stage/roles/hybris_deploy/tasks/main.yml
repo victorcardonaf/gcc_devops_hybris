@@ -15,18 +15,18 @@
     recurse: yes
     mode: 0774
 
-- name: change_solr
-  become_user: hybris
-  lineinfile:
-    path: "{{ installation_folder }}/hybris/config/local.properties"
-    line: "solrserver.instances.default.autostart=false"
-
 - name: execute_ant
   become_user: hybris
   remote_src: yes
   shell: |
     cd {{ installation_folder }}
     ./gradlew rebuild
+
+- name: change_solr
+  become_user: hybris
+  lineinfile:
+    path: "{{ installation_folder }}/hybris/config/local.properties"
+    line: "solrserver.instances.default.autostart=false"
 
 - name: change_permissions
   become_user: root

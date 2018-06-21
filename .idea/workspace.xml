@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88f826e2-8f43-4f20-a114-23c855434d37" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/environments/stage/group_vars/all/configure_nfs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/environments/dev/roles/java_configuration" beforeDir="false" afterPath="$PROJECT_DIR$/environments/dev/roles/java_configuration" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/stage/install_hybris.retry" beforeDir="false" afterPath="$PROJECT_DIR$/environments/stage/install_hybris.retry" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/stage/install_hybris.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environments/stage/install_hybris.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/stage/inventarios/hosts" beforeDir="false" afterPath="$PROJECT_DIR$/environments/stage/inventarios/hosts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/environments/stage/roles/java_configuration" beforeDir="false" afterPath="$PROJECT_DIR$/environments/stage/roles/java_configuration" afterDir="false" />
     </list>
@@ -15,43 +20,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="datahub_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/datahub_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datahub_mysql.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/datahub_mysql.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hybris_configuration.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hybris_configuration.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/hybris_configuration.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
+            <state relative-caret-position="34">
+              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="java_configuration.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/java_configuration.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="jeffhung_mysql.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/jeffhung_mysql.yml">
+      <file leaf-file-name="mysql_connection.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/mysql_connection.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="51">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -65,30 +47,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="systemd-hybris.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/systemd-hybris.yml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="main.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
+            <state relative-caret-position="179">
+              <caret line="44" column="123" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="44" selection-end-column="123" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="williamyeh.oracle-java.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/williamyeh.oracle-java.yml">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/stage/roles/configure_nfs/tasks/main.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="mysql_connection.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/mysql_connection.yml">
+      <file leaf-file-name="configure_nfs.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/configure_nfs.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datahub_mysql.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/datahub_mysql.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datahub_config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/datahub_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/stage/roles/jeffhung.mysql/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="18" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hosts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/environments/stage/inventarios/hosts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -122,8 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/roles/jeffhung.mysql/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/roles/hybris_centos/tasks/main.yml" />
         <option value="$PROJECT_DIR$/roles/hybris_setup/tasks/main.yml" />
         <option value="$PROJECT_DIR$/environments/env/roles/java_configuration/tasks/main.yml" />
         <option value="$PROJECT_DIR$/environments/env/roles/jeffhung.mysql/vars/main.yml" />
@@ -170,9 +185,11 @@
         <option value="$PROJECT_DIR$/environments/qa/roles/systemd_solr/templates/solrmaster_service.j2" />
         <option value="$PROJECT_DIR$/environments/qa/roles/systemd_solr/templates/solrslave_service.j2" />
         <option value="$PROJECT_DIR$/environments/qa/roles/solr_configuration/templates/script_solr.j2" />
+        <option value="$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/environments/stage/group_vars/all/configure_nfs.yml" />
+        <option value="$PROJECT_DIR$/environments/stage/roles/configure_nfs/tasks/main.yml" />
         <option value="$PROJECT_DIR$/environments/stage/inventarios/hosts" />
         <option value="$PROJECT_DIR$/environments/stage/group_vars/all/hybris_configuration.yml" />
-        <option value="$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml" />
       </list>
     </option>
   </component>
@@ -220,30 +237,6 @@
               <item name="stage" type="462c0819:PsiDirectoryNode" />
               <item name="group_vars" type="462c0819:PsiDirectoryNode" />
               <item name="all" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
-              <item name="stage" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
-              <item name="stage" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="hybris_deploy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gcc_devops_hybris" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gcc_devops_hybris" type="462c0819:PsiDirectoryNode" />
-              <item name="environments" type="462c0819:PsiDirectoryNode" />
-              <item name="stage" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-              <item name="hybris_deploy" type="462c0819:PsiDirectoryNode" />
-              <item name="tasks" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -368,20 +361,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/environments/dev/roles/systemd-hybris/templates/hybris_service.j2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/dev/roles/systemd-hybris/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environments/dev/roles/systemd-datahub/templates/start_datahub.j2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -557,13 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/roles/jeffhung.mysql/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="127" column="14" lean-forward="true" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/roles/datahub.mysql/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -620,25 +592,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/inventarios/hosts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/mysql_connection.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/systemd-hybris.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/williamyeh.oracle-java.yml">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/java_configuration.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/jeffhung_mysql.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/mysql_connection.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/roles/jeffhung.mysql/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/solr_configuration.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="44" column="123" lean-forward="true" selection-start-line="42" selection-start-column="4" selection-end-line="44" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/roles/configure_nfs/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/inventarios/hosts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/configure_nfs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/datahub_config.yml">
       <provider selected="true" editor-type-id="text-editor">
@@ -654,34 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/jeffhung_mysql.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/hybris_configuration.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/java_configuration.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/group_vars/all/solr_configuration.yml">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="70" selection-start-line="2" selection-start-column="70" selection-end-line="2" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environments/stage/roles/hybris_deploy/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
+          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
         </state>
       </provider>
     </entry>

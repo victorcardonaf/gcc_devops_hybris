@@ -5,9 +5,10 @@
   
   roles:
 
-   - hybris_configuration
-   - williamyeh.oracle-java
-   - java_configuration   
-   - jeffhung.mysql
-   - hybris_deploy
-   - systemd-hybris
+#  - hybris_configuration
+#  - williamyeh.oracle-java
+#  - java_configuration   
+#  - jeffhung.mysql
+#  - hybris_deploy
+#  - systemd-hybris
+   - configure_nfs
