@@ -17,6 +17,15 @@
   shell: /bin/mount -t nfs4 {{ nfs_ip }}:/ {{ media_dir }}
   register: mount
 
+- name: change_permissions
+  become: true
+  file:
+    path: "{{ media_dir }}"
+    owner: hybris
+    group: hybris
+    mode: 0755
+    state: directory
+
 - name: debug
   debug: var=mount
 

@@ -4,8 +4,8 @@
 172.31.47.52 ansible_user=proveedor become=true ansible_ssh_private_key_file=/etc/ansible/Proveedor_DSW.pem
 [solr]
 172.31.36.224 ansible_user=proveedor become=true ansible_ssh_private_key_file=/etc/ansible/Proveedor_DSW.pem
-[test]
-ec2-52-90-19-208.compute-1.amazonaws.com ansible_user=ec2-user become=true ansible_ssh_private_key_file=/etc/ansible/Hybris_GCC.pem
+#[test]
+#ec2-52-90-19-208.compute-1.amazonaws.com ansible_user=ec2-user become=true ansible_ssh_private_key_file=/etc/ansible/Hybris_GCC.pem
 #[docker]
 #172.17.0.2 ansible_connection=ssh ansible_user=root ansible_ssh_pass=viticor
 #[centos]
