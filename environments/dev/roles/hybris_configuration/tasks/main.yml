@@ -11,6 +11,7 @@
     name: hybris
     shell: /bin/bash
     groups: hybris
+    uid: 1100
     append: yes
     create_home: yes
 

@@ -1,7 +1,7 @@
 ---
 - name: Install_datahub
   become: true
-  hosts: backoffice
+  hosts: datahub
   
   roles:
 

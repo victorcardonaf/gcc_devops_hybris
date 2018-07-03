@@ -94,6 +94,13 @@
     cd {{ datahub_dir }}/temp/hybris/bin/ext-integration/datahub/extensions/sap/
     cp {'{{ jar1 }}','{{ jar2 }}','{{ jar3 }}','{{ jar4 }}','{{ jar5 }}','{{ jar6}}'} {{ datahub_dir }}/extensions/
 
+- name: change_local.properties
+  become_user: hybris
+  lineinfile:
+    path: "{{ installation_folder }}/configuration/stagea/datahub/local.properties"
+    regexp: "^dataSource.jdbcUrl*"
+    line: "dataSource.jdbcUrl=jdbc:mysql://{{mysql_host}}:{{mysql_port}}/{{ db_datahub }}?useConfigs=maxPerformance&rewriteBatchedStatements=true&characterEncoding=utf8"
+
 - name: execute_datahub
   become_user: hybris
   remote_src: yes

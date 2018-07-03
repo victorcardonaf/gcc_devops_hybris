@@ -1,7 +1,7 @@
 ---
 - name: Install hybris
   become: true
-  hosts: storefront,backoffice
+  hosts: backoffice
   
   roles:
 
